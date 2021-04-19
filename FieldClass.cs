@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Cross
+namespace CrossApplication
 {
     class FieldClass
     {
         public int SizeX { get; set; }
         public int SizeY { get; set; }
         public char[,] Field { get; set; }
-        private const char _emptyDot = ' ';
+        public  char EmptyDot { get; set; }
 
 
 
@@ -23,6 +19,7 @@ namespace Cross
             Field = new char[height, width];
             SizeX = width;
             SizeY = height;
+            EmptyDot = ' ';
             ClearField();
 
         }
@@ -33,7 +30,7 @@ namespace Cross
             {
                 for (int j = 0; j < SizeX; j++)
                 {
-                    Field[i, j] = _emptyDot;
+                    Field[i, j] = EmptyDot;
                 }
             }
         }
@@ -41,7 +38,7 @@ namespace Cross
         public void DrawField()
         {
             Console.Clear();
-            Console.SetCursorPosition(0,0);
+            Console.SetCursorPosition(0, 0);
             for (int i = 0; i < SizeY; i++)
             {
                 Console.Write(" _______");
@@ -51,13 +48,13 @@ namespace Cross
             {
                 for (int k = 0; k < 3; k++)
                 {
-                    for  (int j = 0; j < SizeY; j++)
+                    for (int j = 0; j < SizeY; j++)
                     {
-                        if(k==1)
-                            Console.Write($"|   {Field[j,i]}   ");
+                        if (k == 1)
+                            Console.Write($"|   {Field[j, i]}   ");
                         else if (k == 2)
                             Console.Write("|_______");
-                        else 
+                        else
                         {
                             Console.Write("|       ");
                         }
@@ -67,12 +64,5 @@ namespace Cross
                 }
             }
         }
-
-
-
-
-
-
-
     }
 }

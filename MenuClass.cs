@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Cross
+namespace CrossApplication
 {
     class MenuClass
     {
@@ -36,8 +32,8 @@ namespace Cross
                     {
                         currentY++;
                     }
-                    
-                    
+
+
                 }
                 else if (key == ConsoleKey.UpArrow)
                 {
@@ -47,26 +43,26 @@ namespace Cross
                     {
                         currentY--;
                     }
-                    
+
                 }
-                else
+                else if(key==ConsoleKey.Enter)
                 {
-                    result =(byte) (currentY % start);
+                    result = (byte)(currentY % start);
                     break;
                 }
                 DrawMenu();
-                Console.SetCursorPosition(currentX,currentY);
+                Console.SetCursorPosition(currentX, currentY);
             } while (key != ConsoleKey.Enter);
 
             if (result == 0)
             {
-                GameClass game=new GameClass(new FieldClass(3,3),3, 'X', 'O');
+                GameClass game = new GameClass(new FieldClass(3, 3), 3, 'X', 'O');
             }
-            else if (result==1)
+            else if (result == 1)
             {
-                GameClass game = new GameClass(new FieldClass(5, 5),5, 'X', 'O');
+                GameClass game = new GameClass(new FieldClass(5, 5), 5, 'X', 'O');
             }
-            else if(result==2)
+            else if (result == 2)
             {
                 GameClass game = SetSettingsMenu();
             }
@@ -74,7 +70,7 @@ namespace Cross
             {
                 return;
             }
-            
+
         }
 
 
@@ -87,7 +83,7 @@ namespace Cross
             int currentY = height / 2 - 3;
             Console.SetCursorPosition(currentX, currentY);
             Console.WriteLine("Игра Крестики-Нолики");
-            currentY+=2;
+            currentY += 2;
             Console.SetCursorPosition(currentX, currentY);
             Console.WriteLine("3*3");
             currentY++;
@@ -105,7 +101,7 @@ namespace Cross
         private GameClass SetSettingsMenu()
         {
             Console.Clear();
-            Console.SetCursorPosition(0,0);
+            Console.SetCursorPosition(0, 0);
             int size = 0;
             int winSeries = 0;
             char playerDot = ' ';
@@ -114,7 +110,7 @@ namespace Cross
             {
                 Console.Write("Введите размер поля (от 3 до 10): ");
                 int.TryParse(Console.ReadLine(), out size);
-            } while (size<3 && size>10);
+            } while (size < 3 && size > 10);
             do
             {
                 Console.Write($"Введите победную серию (от 3 до {size}): ");
@@ -124,9 +120,9 @@ namespace Cross
             {
                 Console.Write($"Введите чем вы будете играть ('X' или 'O'): ");
                 playerDot = Console.ReadLine().ToUpper()[0];
-            } while (playerDot!='X' && playerDot!='O');
+            } while (playerDot != 'X' && playerDot != 'O');
             aiDot = playerDot == 'X' ? 'O' : 'X';
-            GameClass game=new GameClass(new FieldClass(size,size),winSeries, playerDot, aiDot);
+            GameClass game = new GameClass(new FieldClass(size, size), winSeries, playerDot, aiDot);
             return game;
 
 

@@ -1,0 +1,10 @@
+E:\Курс\Введение в C#\CrossApplication\bin\Debug\CrossApplication.exe.config
+E:\Курс\Введение в C#\CrossApplication\bin\Debug\CrossApplication.exe
+E:\Курс\Введение в C#\CrossApplication\bin\Debug\CrossApplication.pdb
+E:\Курс\Введение в C#\CrossApplication\bin\Debug\System.ValueTuple.dll
+E:\Курс\Введение в C#\CrossApplication\bin\Debug\System.ValueTuple.xml
+E:\Курс\Введение в C#\CrossApplication\obj\Debug\CrossApplication.csprojAssemblyReference.cache
+E:\Курс\Введение в C#\CrossApplication\obj\Debug\CrossApplication.csproj.CoreCompileInputs.cache
+E:\Курс\Введение в C#\CrossApplication\obj\Debug\CrossApplication.csproj.CopyComplete
+E:\Курс\Введение в C#\CrossApplication\obj\Debug\CrossApplication.exe
+E:\Курс\Введение в C#\CrossApplication\obj\Debug\CrossApplication.pdb
